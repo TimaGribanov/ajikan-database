@@ -10,8 +10,8 @@ app.use(
     })
 );
 
-app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname+'/index.html'))
+app.get('./', (request, response) => {
+    response.sendFile(path.join('index.html'))
 });
 
 app.listen(port, () => {
