@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ajikan-database-node.iml" filepath="$PROJECT_DIR$/.idea/ajikan-database-node.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ajikan-database/.idea/ajikan-database.iml" filepath="$PROJECT_DIR$/../ajikan-database/.idea/ajikan-database.iml" />
     </modules>
   </component>
 </project>
