@@ -10,7 +10,7 @@ app.use(
     })
 );
 
-app.get('.', (request, response) => {
+app.get('/index', (request, response) => {
     response.sendFile(path.join('index.html'))
 });
 
