@@ -17,5 +17,5 @@ const getSong = (request, response) => {
 };
 
 module.exports = {
-    getSong,
+    getSong
 };
