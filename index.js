@@ -14,9 +14,10 @@ app.use(
     response.json({ info: 'Node.js, Express, and Postgres API' })
 });*/
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 });
+server.setTimeout(500000);
 
 const db = require('./queries.js');
 
