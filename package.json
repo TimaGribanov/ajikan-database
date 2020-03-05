@@ -1,0 +1,29 @@
+{
+  "name": "ajikan-database",
+  "version": "1.0.0",
+  "description": "Node.js back-end of ajikan-database project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimaGribanov/ajikan-database.git"
+  },
+  "keywords": [],
+  "author": "Timofey Gribanov <t.gribanow@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimaGribanov/ajikan-database/issues"
+  },
+  "homepage": "https://github.com/TimaGribanov/ajikan-database#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.18.2"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "devDependencies": {}
+}
