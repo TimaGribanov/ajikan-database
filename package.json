@@ -4,7 +4,9 @@
   "description": "Node.js back-end of ajikan-database project",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [],
   "author": "Timofey Gribanov <t.gribanow@gmail.com>",
