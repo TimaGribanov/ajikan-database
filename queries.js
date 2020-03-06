@@ -10,7 +10,7 @@ let searchField = document.getElementById('search-field').value;*/
 //let songQuery = 'SELECT ' + title_type + ', record FROM ajikan.songs WHERE title LIKE \'%' + searchField + '%\' OR title_romaji LIKE \'%' + searchField + '%\' OR title_en LIKE \'%' + searchField + '%\' OR ';
 
 const getSongs = (request, response) => {
-    pool.query('SELECT * FROM ajikan.songs', (error, results) => {
+    pool.query('SELECT * FROM ajikan.songs ORDER BY id', (error, results) => {
         if (error) {
             throw error
         }
@@ -19,7 +19,7 @@ const getSongs = (request, response) => {
 };
 
 const getRecords = (request, response) => {
-    pool.query('SELECT * FROM ajikan.records', (error, results) => {
+    pool.query('SELECT * FROM ajikan.records ORDER BY id', (error, results) => {
         if (error) {
             throw error
         }
