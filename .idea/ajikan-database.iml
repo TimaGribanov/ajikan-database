@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/express" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="alasql" level="application" />
   </component>
 </module>
