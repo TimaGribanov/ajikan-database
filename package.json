@@ -2,7 +2,6 @@
   "name": "ajikan-database",
   "version": "1.0.0",
   "description": "Node.js back-end of ajikan-database project",
-  "main": "app.js",
   "scripts": {
     "start": "node ./app.js"
   },
