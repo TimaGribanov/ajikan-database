@@ -24,6 +24,7 @@
     "node": "12.x"
   },
   "devDependencies": {
+    "ejs": "^3.0.1",
     "html": "^1.0.0"
   }
 }
