@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Asian Kung-Fu Generation Database</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: "GET",
+            url: 'https://ajikan-database.herokuapp.com/songs',
+            dataType: 'json'
+        })
+
+            .done(function(data){
+                console.log("GET Succeeded");
+                $('#result').html(JSON.stringify);
+            });
+    </script>
 </head>
 <body>
     <form action="/" name="find-song" method="post">
         <input name="song-name" type="text" id="search-field"/>
         <button id="search-button">Search</button>
     </form>
-    <p id="answer"></p>
+    <p id="result"></p>
 </body>
 </html>
