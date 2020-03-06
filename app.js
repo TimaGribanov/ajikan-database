@@ -1,13 +1,13 @@
-const html = require('html');
+//const html = require('html');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
-app.engine('html', require('ejs').renderFile);
+//app.engine('html', require('ejs').renderFile);
 //app.set('view engine', 'html');
 //app.use(express.static(path.join(__dirname, '/')));
 const path = require('path');
-const VIEWS = path.join(__dirname, '/');
+//const VIEWS = path.join(__dirname, '/');
 
 app.use(bodyParser.json());
 app.use(
@@ -17,7 +17,7 @@ app.use(
 );
 
 app.get('/', (request, response) => {
-    response.sendFile('/index.html', { root : VIEWS });
+    response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.listen(port, () => {
