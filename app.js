@@ -1,13 +1,8 @@
-//const html = require('html');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
-//app.engine('html', require('ejs').renderFile);
-//app.set('view engine', 'html');
-//app.use(express.static(path.join(__dirname, '/')));
 const path = require('path');
-//const VIEWS = path.join(__dirname, '/');
 
 app.use(bodyParser.json());
 app.use(
@@ -16,9 +11,17 @@ app.use(
     })
 );
 
+// Load a html page
 app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname + '/index.html'));
 });
+
+// Get elements from input
+/*app.post('/', (request, response) => {
+    printIt(request.body, response);
+});*/
+
+//function printIt(text, response)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
@@ -26,4 +29,5 @@ app.listen(port, () => {
 
 const db = require('./queries.js');
 
-//app.get('/song', db.getSong);
+app.get('/songs', db.getSongs);
+app.get('/records', db.getRecords);
