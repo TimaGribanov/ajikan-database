@@ -6,10 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
     <script type="text/javascript">
-        let songList;
-        let recordList;
-
-        $.ajax({
+        /*$.ajax({
             type: 'GET',
             url: 'https://ajikan-database.herokuapp.com/songs',
             async: true,
@@ -31,7 +28,9 @@
                 recordList = data;
                 return data;
             }
-        });
+        });*/
+
+
 
         function search() {
             let searchValue = document.getElementById('search-field').value;
@@ -39,21 +38,30 @@
 
             let res = [];
 
-            alasql.promise('SELECT @title_romaji RUSSIAN INTO ? FROM songList WHERE @title_romaji LIKE ?', [res,searchValue])
-                .then(function(data) {
-                    console.log(res);
-                    for(let i = 0;i < res.length;i++){
-                        document.getElementById('result').innerHTML += '<div id="song-' + i + '" class="answer">\n' +
-                            '            <div id="song-title-' + i + '" class="answer-eus"></div>\n' +
-                            '            <div id="song-records-' + i + '" class="answer-right">\n' +
-                            '            </div>\n' +
-                            '        </div>\n<hr class="answer-hr"/>';
-                        document.getElementById('song-title-' + i).innerText = res[i].title;
-                        document.getElementById('song-records-' + i).innerText = res[i].record;
-                    }
-                    res = [];
-                }).catch(function(error) {
-                console.log(error);
+            $.ajax({
+                type: 'GET',
+                url: 'https://ajikan-database.herokuapp.com/songs_records',
+                async: true,
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    alasql.promise('SELECT @title_romaji RUSSIAN INTO ? FROM songList WHERE @title_romaji LIKE ?', [res,searchValue])
+                        .then(function(data) {
+                            console.log(res);
+                            for(let i = 0;i < res.length;i++){
+                                document.getElementById('result').innerHTML += '<div id="song-' + i + '" class="answer">\n' +
+                                    '            <div id="song-title-' + i + '" class="answer-eus"></div>\n' +
+                                    '            <div id="song-records-' + i + '" class="answer-right">\n' +
+                                    '            </div>\n' +
+                                    '        </div>\n<hr class="answer-hr"/>';
+                                document.getElementById('song-title-' + i).innerText = res[i].title;
+                                document.getElementById('song-records-' + i).innerText = res[i].record;
+                            }
+                            res = [];
+                        }).catch(function(error) {
+                        console.log(error);
+                    });
+                }
             });
         }
     </script>
