@@ -74,6 +74,10 @@ body {
     margin-left: 50px;
 }
 
+.line-through {
+    text-decoration-line: line-through;
+}
+
 #footer {
     font-size: 16px;
     text-align: center;
