@@ -142,3 +142,9 @@ function search() {
         });
     }
 }
+
+window.onkeydown = function pressEnter(e) {
+    if (e.code === 'Enter' || e.key === 'Enter') {
+        search();
+    }
+};
