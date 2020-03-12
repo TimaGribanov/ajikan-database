@@ -46,7 +46,7 @@ body {
 #result {
     margin: 0 auto;
     width: 640px;
-    min-height: 680px;
+    min-height: 500px;
 }
 
 .song {
@@ -81,6 +81,10 @@ body {
 #footer {
     font-size: 16px;
     text-align: center;
+    position: fixed;
+    padding: 10px 10px 0 10px;
+    bottom: 0;
+    width: 100%;
     margin-top: 20px;
 }
 
