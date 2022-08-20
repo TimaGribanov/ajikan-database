@@ -1,3 +1,5 @@
+**NB!** Currently, it doesn't work since the back-end was hosted on Heroku and my account was suspended. If I get my account restored, then I'll restore it. Otherwise, I'll most likely drop it.
+
 # Asian Kung-Fu Generation Database
 This is a little project that allows anyone to get info about records that a certain song of a band Asian Kung-Fu Generation is on.
 
