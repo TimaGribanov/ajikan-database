@@ -3,7 +3,7 @@ name: Delete Deployment Environment
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
 
 jobs:
   delete:
