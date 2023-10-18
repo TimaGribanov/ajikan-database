@@ -8,9 +8,12 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
+    environment:
+      name: ajikan-database
+      url: https://timagribanov.com/ajikan-database
     
     steps:
       - name: chekout repo
@@ -25,27 +28,6 @@ jobs:
         run: cd frontend; npm install
       - name: build frontend
         run: cd frontend; npm run build
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-files
-          path: ./dist
-    
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    environment:
-      name: ajikan-database
-      url: https://timagribanov.com/ajikan-database
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./dist
       - name: move frontend built to backend
         run: mv dist ../backend
       - name: rename the frontend built
