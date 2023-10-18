@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         uses: bahmutov/npm-install@v1
         with:
-          working-directory: /frontend
+          working-directory: ./frontend
       - name: build frontend
         run: cd frontend; npm run build
       - name: Upload production-ready build files
