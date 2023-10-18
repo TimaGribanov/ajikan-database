@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: chekout repo
         uses: actions/checkout@v3
+        with:
+          sparse-checkout: .
       - name: show repo contents
         run: ls -al
       - name: setup node
