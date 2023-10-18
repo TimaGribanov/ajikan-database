@@ -1,0 +1,33 @@
+name: Deploy to digital Ocean
+
+concurrency: production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: ajikan-database
+      url: https://timagribanov.com/ajikan-database
+    steps:
+      - name: Install SHH-key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: chekout repo
+        uses: actions/checkout@v2.3.4
+      - name: show repo contents
+        run: ls -al
+      - name: build frontend
+        run: cd frontend; npm run build
+      - name: move frontend built to backend
+        run: mv dist ../backend
+      - name: rename teh frontend built
+        run: cd ../backend; mv dist build
+      - name: deploy
+        run: rsycn -ar . ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}

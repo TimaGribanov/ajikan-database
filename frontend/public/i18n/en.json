@@ -1,0 +1,7 @@
+{
+  "alertNoInput": "No input is present, we won't show the whole list of songs, sorry",
+  "alertOneLetter": "One letter? Two many songs may contain this one letter – give us more!",
+  "searchPlaceholder": "Enter a name of a song or a part of it",
+  "searchBtn": "search",
+  "infoBlock": "This thing was made to get info about all recordings that an Ajikan's song is on quickly. I made it for some practice but feel free to use it to your heart's content. All the information is taken from the database of <site_anchor>akfgfragments.com</site_anchor>."
+}

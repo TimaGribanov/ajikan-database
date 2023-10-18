@@ -1,0 +1,72 @@
+@font-face {
+  font-family: Rubik;
+  src: url('assets/fonts/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: KosugiMaru;
+  src: url('assets/fonts/KosugiMaru-Regular.ttf');
+}
+
+body {
+  font-family: Rubik, sans-serif;
+  margin-bottom: 60px;
+}
+
+.ja {
+  font-family: KosugiMaru, sans-serif;
+}
+
+h3.ja {
+  font-family: KosugiMaru, sans-serif;
+  font-weight: 800;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 2%;
+}
+
+#infoBlock i {
+  cursor: pointer;
+}
+
+#infoText a {
+  text-decoration: underline;
+}
+
+#infoText a:hover {
+  text-decoration: underline;
+  background-color: black;
+  color: white;
+}
+
+footer {
+  background-color: white;
+  font-size: 1rem;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 0.6rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+}
+
+footer i {
+  color: black;
+}
+
+footer i:hover {
+  color: lightgrey;
+}

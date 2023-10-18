@@ -1,0 +1,7 @@
+{
+  "alertNoInput": "入力がない、曲の全体のリストは見せるつもりない、ごめん",
+  "alertOneLetter": "１字？たくさん曲は１字がある。もっと字を書いてください",
+  "searchPlaceholder": "ここで曲名を書いてください",
+  "searchBtn": "検索",
+  "infoBlock": "早くアジカンの曲を含む全レコードを検索するから、このサイトを作った。でも、誰かはこれを使えば、僕は嬉しい！全データは<site_anchor>akfgfragments.com</site_anchor>のデータベースから。"
+}

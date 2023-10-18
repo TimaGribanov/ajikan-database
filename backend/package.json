@@ -1,0 +1,34 @@
+{
+  "name": "ajikan-database-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Ajikan DB project",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimaGribanov/ajikan-database.git"
+  },
+  "author": "Timofei Gribanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimaGribanov/ajikan-database/issues"
+  },
+  "homepage": "https://github.com/TimaGribanov/ajikan-database#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mariadb": "^3.2.1",
+    "static": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.2",
+    "nodemon": "^3.0.1"
+  }
+}

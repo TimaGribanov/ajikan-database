@@ -1,0 +1,12 @@
+GET http://localhost:3001/api/songs
+
+###
+GET http://localhost:3001/api/songs
+Content-Type: application/json
+
+{
+  "song": "Kimi"
+}
+
+###
+GET http://localhost:3001/api/song
