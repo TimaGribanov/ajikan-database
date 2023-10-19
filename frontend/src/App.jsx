@@ -21,6 +21,11 @@ const App = () => {
 
   const { i18n, t } = useTranslation()
 
+  const getCurrentHost =
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:3001'
+      : 'https://ajikan-database.timagribanov.com'
+
   const handleSearch = async event => {
     event.preventDefault()
 
@@ -33,7 +38,7 @@ const App = () => {
     else {
       let search = songName
       if (search.toLowerCase() === 'soranin') search = 'solanin'
-      const response = await axios.get('http://localhost:3001/api/songs', { params: { name: search } })
+      const response = await axios.get(`${getCurrentHost}/api/songs`, { params: { name: search } })
       setResults(response.data)
     }
     setLoading(false)
