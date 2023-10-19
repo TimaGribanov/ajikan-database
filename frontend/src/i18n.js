@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next'
 const getCurrentHost =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5173'
-    : 'http://http://ajikan-database.timagribanov.com'
+    : 'http://ajikan-database.timagribanov.com'
 
 i18n
   .use(i18nBackend)
