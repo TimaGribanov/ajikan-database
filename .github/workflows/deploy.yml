@@ -56,6 +56,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: react-github-actions-build
+          path: build
 
       - name: Install SHH-key
         uses: shimataro/ssh-key-action@v2
