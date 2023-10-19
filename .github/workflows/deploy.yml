@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
+      - name: workaround for esbuild
+        run: cd frontend; npm i esbuild
       - name: install dependencies
         run: cd frontend; npm install
       - name: build frontend
