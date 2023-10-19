@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next'
 const getCurrentHost =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5173'
-    : `http://${import.meta.env.REACT_APP_IP}:${import.meta.env.REACT_APP_PORT}`
+    : 'http://http://ajikan-database.timagribanov.com'
 
 i18n
   .use(i18nBackend)
