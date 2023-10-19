@@ -24,8 +24,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
-      - name: workaround for esbuild
-        run: cd frontend; npm cache clean -f
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      # - name: workaround for esbuild
+      #   run: cd frontend; npm cache clean -f
       - name: install dependencies
         run: cd frontend; npm install
       - name: build frontend
