@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: chekout repo
         uses: actions/checkout@v3
-        with:
-          sparse-checkout: .
       - name: show repo contents
         run: ls -al
       - name: setup node
@@ -31,9 +29,9 @@ jobs:
       - name: build frontend
         run: cd frontend; npm run build
       - name: move frontend built to backend
-        run: mv dist ../backend
+        run: mv frontend/dist backend
       - name: rename the frontend built
-        run: cd ../backend; mv dist build
+        run: cd backend; mv dist build
       - name: Install SHH-key
         uses: shimataro/ssh-key-action@v2
         with:
