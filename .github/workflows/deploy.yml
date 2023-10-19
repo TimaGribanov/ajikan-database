@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 18
       - name: workaround for esbuild
-        run: cd frontend; npm i esbuild
+        run: cd frontend; npm uninstall esbuild
       - name: install dependencies
         run: cd frontend; npm install
       - name: build frontend
