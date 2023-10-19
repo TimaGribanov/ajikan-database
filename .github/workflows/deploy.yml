@@ -27,10 +27,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: cd frontend; npm install
       
       - name: Build frontend
-        run: npm run build
+        run: cd frontend; npm run build
       
       - name: Share artifact inside workflow
         uses: actions/upload-artifact@v1
