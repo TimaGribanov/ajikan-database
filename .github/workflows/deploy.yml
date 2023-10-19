@@ -8,38 +8,60 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Build and deploy
+  build:
+    name: Build
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Chekout frontend folder
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: frontend
+
+      - name: Show repo contents
+        run: ls -al
+      
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build frontend
+        run: npm run build
+      
+      - name: Share artifact inside workflow
+        uses: actions/upload-artifact@v1
+        with:
+          name: react-github-actions-build
+          path: build
+  
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: ajikan-database
       url: https://timagribanov.com/ajikan-database
     
     steps:
-      - name: chekout repo
-        uses: actions/checkout@v3
-      - name: show repo contents
-        run: ls -al
-      - name: setup node
-        uses: actions/setup-node@v1
+      - name: Chekout backend folder
+        uses: actions/checkout@v4
         with:
-          node-version: 18
-      # - name: workaround for esbuild
-      #   run: cd frontend; npm cache clean -f
-      - name: show the contents of package.json
-        run: cat package.json
-      - name: install dependencies
-        run: cd frontend; npm install
-      - name: build frontend
-        run: cd frontend; npm run build
-      - name: move frontend built to backend
-        run: mv frontend/dist backend
-      - name: rename the frontend built
-        run: cd backend; mv dist build
+          sparse-checkout: backend
+
+      - name: Get artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: react-github-actions-build
+
       - name: Install SHH-key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
+     
       - name: deploy
         run: rsycn -ar . ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}
