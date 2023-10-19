@@ -1,4 +1,4 @@
-name: Deploy to digital Ocean
+name: Deploy to Digital Ocean
 
 concurrency: production
 
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: react-github-actions-build
-          path: build
+          path: frontend/build
   
   deploy:
     name: Deploy
