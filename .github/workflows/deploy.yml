@@ -44,7 +44,7 @@ jobs:
     needs: build
     environment:
       name: ajikan-database
-      url: https://timagribanov.com/ajikan-database
+      url: https://ajikan-database.timagribanov.com
     
     steps:
       - name: Chekout backend folder
