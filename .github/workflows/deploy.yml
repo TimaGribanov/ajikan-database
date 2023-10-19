@@ -24,14 +24,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       # - name: workaround for esbuild
       #   run: cd frontend; npm cache clean -f
+      - name: show the contents of package.json
+        run: cat package.json
       - name: install dependencies
         run: cd frontend; npm install
       - name: build frontend
