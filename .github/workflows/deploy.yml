@@ -19,7 +19,7 @@ jobs:
           sparse-checkout: frontend
 
       - name: Show repo contents
-        run: ls -al
+        run: ls -alR
       
       - name: Setup node
         uses: actions/setup-node@v1
