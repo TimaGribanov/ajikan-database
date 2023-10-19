@@ -64,4 +64,4 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
      
       - name: deploy
-        run: rsycn -ar . ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}
+        run: rsync -ar . ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}
