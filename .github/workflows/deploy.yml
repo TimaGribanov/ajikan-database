@@ -56,7 +56,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: react-github-actions-build
-          path: build
+          path: backend/build
 
       - name: Install SHH-key
         uses: shimataro/ssh-key-action@v2
@@ -65,4 +65,4 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
      
       - name: deploy
-        run: rsync -ar . ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}
+        run: rsync -ar backend ${{ secrets.USER }}@${{ secrets.IP }}:${{ secrets.PATH }}
