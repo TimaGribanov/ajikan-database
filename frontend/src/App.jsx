@@ -33,8 +33,10 @@ const App = () => {
 
     if (songName === '')
       alert(t('alertNoInput'))
-    else if (songName.length === 1)
-      alert(t('alertOneLetter'))
+    else if (songName.length === 1) {
+      if (language !== 'ja') alert(t('alertOneLetter'))
+    }
+      
     else {
       let search = songName
       if (search.toLowerCase() === 'soranin') search = 'solanin'
