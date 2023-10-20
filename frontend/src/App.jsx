@@ -66,8 +66,16 @@ const App = () => {
     <>
       <Suspense fallback='loading'>
         <main className='container'>
+        <div className='row d-sm-block d-block d-md-none d-lg-none d-xl-none mb-3 d-flex justify-content-center'>
+              <Language handleLangs={handleLangs} />
+              <Info
+                visible={infoShown}
+                handleInfo={handleInfo}
+                lang={language}
+              />
+            </div>
           <div className='row'>
-            <div className='col-8 me-3'>
+            <div className='col-md-8 col-lg-8 col-xl-8 col-sm me-3'>
               <Search
                 t={t}
                 handleSongInput={handleSongInput}
@@ -79,7 +87,7 @@ const App = () => {
                 lang={language}
               />
             </div>
-            <div className='col ms-3'>
+            <div className='col d-none d-md-block d-lg-block d-xl-block ms-3'>
               <Language handleLangs={handleLangs} />
               <Info
                 visible={infoShown}
